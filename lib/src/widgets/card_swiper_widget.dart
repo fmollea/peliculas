@@ -29,7 +29,7 @@ class CardSwiper extends StatelessWidget {
             )
           );
         },
-        itemWidth: _screenSize.width * 0.7,
+        itemWidth: _screenSize.width * 0.65,
         itemHeight: _screenSize.height * 0.5,
         itemCount: peliculas.length,
         layout: SwiperLayout.STACK,
