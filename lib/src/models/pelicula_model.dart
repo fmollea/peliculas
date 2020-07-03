@@ -56,7 +56,7 @@ class Pelicula {
     posterPath        = json['poster_path'];
     id                = json['id'];
     adult             = json['adult'];
-    backdropPath        = json['background_path'];
+    backdropPath      = json['backdrop_path'];
     originalLanguage  = json['original_language'];
     originalTitle     = json['original_title'];
     genreIds          = json['genre_ids'].cast<int>();
@@ -77,4 +77,17 @@ class Pelicula {
 
     return url;
   }
+
+  String getBackdropPath() {
+
+    String url = 'https://cdn11.bigcommerce.com/s-auu4kfi2d9/stencil/59606710-d544-0136-1d6e-61fd63e82e4' +
+      '4/e/0fa64ac0-0314-0137-cf43-1554cd16a871/icons/icon-no-image.svg';
+   
+    if (posterPath != null) {
+      url = 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }
+
+    return url;
+  }
+  
 }

@@ -40,7 +40,7 @@ class MovieHorizontal extends StatelessWidget {
 
     final _screenSize = MediaQuery.of(context).size;
 
-    return Container(
+    final _tarjetaContainer = Container(
         margin: EdgeInsets.only(right: 8.0),
         child: Column(
           children: <Widget>[
@@ -62,10 +62,17 @@ class MovieHorizontal extends StatelessWidget {
           ],
         ),
       );
+
+    return GestureDetector(
+      child: _tarjetaContainer,
+      onTap: () {
+        Navigator.pushNamed(context, 'detail', arguments: pelicula);
+      },
+    );
   }
 
 //Este método se deja de usar cuando se implementa el page.builder y se crea el método _tarjeta.
-/*
+
   List<Widget> _tarjetas(BuildContext context) {
 
     final _screenSize = MediaQuery.of(context).size;
@@ -95,5 +102,4 @@ class MovieHorizontal extends StatelessWidget {
       );
     }).toList();
   }
-  */
 }
